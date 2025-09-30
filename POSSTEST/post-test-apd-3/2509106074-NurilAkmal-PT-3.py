@@ -1,8 +1,8 @@
 NAMA_TERDAFTAR = "Nuril Akmal"    
 NIM_TERDAFTAR  = 2509106074
-biaya_langganan = 1500000 
+biaya_langganan = 1500000
 print("=== Sistem Pembayaran Langganan Musik ===")
-nama = input("Masukkan nama lengkap : ")
+nama = input("Masukkan nama lengkap : ") 
 nim  = int(input("Masukkan NIM          : "))
 
 if nama == NAMA_TERDAFTAR and nim == NIM_TERDAFTAR:
