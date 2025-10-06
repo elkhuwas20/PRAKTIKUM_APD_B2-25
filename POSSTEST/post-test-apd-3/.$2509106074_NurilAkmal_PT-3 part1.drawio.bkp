@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
   <diagram name="Page-1" id="_X4G6l9tYw8SLf7lQPxs">
-    <mxGraphModel dx="1111" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1852" dy="1018" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -52,12 +52,12 @@
         <mxCell id="gjdTq_unMup49dW8B0q1-9" value="Input &quot;Masukkan NIM anda :" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="345" y="490" width="190" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="gjdTq_unMup49dW8B0q1-50" value="true" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" source="gjdTq_unMup49dW8B0q1-22" edge="1">
+        <mxCell id="gjdTq_unMup49dW8B0q1-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" source="gjdTq_unMup49dW8B0q1-22" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="640" y="674.6666666666667" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gjdTq_unMup49dW8B0q1-54" value="false" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" source="gjdTq_unMup49dW8B0q1-22" target="gjdTq_unMup49dW8B0q1-53" edge="1">
+        <mxCell id="gjdTq_unMup49dW8B0q1-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" source="gjdTq_unMup49dW8B0q1-22" target="gjdTq_unMup49dW8B0q1-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gjdTq_unMup49dW8B0q1-22" value="if&amp;nbsp;Nama = Nuril Akmal and NIM = 2509106074" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -68,7 +68,7 @@
             <mxPoint x="690" y="1013" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GC2IrTUNr6KnhAqL9g8C-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="gjdTq_unMup49dW8B0q1-37" target="GC2IrTUNr6KnhAqL9g8C-4" edge="1">
+        <mxCell id="GC2IrTUNr6KnhAqL9g8C-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gjdTq_unMup49dW8B0q1-37" target="GC2IrTUNr6KnhAqL9g8C-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gjdTq_unMup49dW8B0q1-37" value="Input &quot;Masukkan pilihan paket anda (1/2/3/4)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
@@ -86,10 +86,8 @@
         <mxCell id="gjdTq_unMup49dW8B0q1-48" value="Output &quot;Harga biaya langganan&lt;div&gt;&amp;nbsp;Rp. 1.500.000&quot;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="584" y="740" width="212" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="p5EWE4-b8GtsBWFhoO7g-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gjdTq_unMup49dW8B0q1-53" target="GC2IrTUNr6KnhAqL9g8C-2">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="182" y="840" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="GC2IrTUNr6KnhAqL9g8C-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gjdTq_unMup49dW8B0q1-53" target="GC2IrTUNr6KnhAqL9g8C-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gjdTq_unMup49dW8B0q1-53" value="&amp;nbsp; &amp;nbsp; Output &quot;Login gagal! Nama atau NIM salah&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="645" width="184" height="60" as="geometry" />
@@ -97,10 +95,10 @@
         <mxCell id="gjdTq_unMup49dW8B0q1-59" value="Output &quot;Pilihan Paket :&lt;div&gt;1. Paket Broze (admin 1%)&lt;/div&gt;&lt;div&gt;2. Paket Silver (admin 3%)&lt;/div&gt;&lt;div&gt;3. Paket Gold (admin 5%)&lt;/div&gt;&lt;div&gt;4.Paket Platinum (7%)&quot;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="560" y="820" width="270" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="GC2IrTUNr6KnhAqL9g8C-2" value="END" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="366" y="780" width="118" height="80" as="geometry" />
+        <mxCell id="GC2IrTUNr6KnhAqL9g8C-2" value="END" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="123" y="780" width="118" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="GC2IrTUNr6KnhAqL9g8C-4" value="A" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="GC2IrTUNr6KnhAqL9g8C-4" value="A" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="1050" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
