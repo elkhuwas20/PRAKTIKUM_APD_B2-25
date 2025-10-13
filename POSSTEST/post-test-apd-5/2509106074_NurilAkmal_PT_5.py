@@ -25,6 +25,18 @@ while True:
         print("Terima kasih telah menggunakan sistem ini.")
 
         sys.exit()
+    elif pilihan == '1':
+        user = input("Masukkan username: ")
+        pwd = input("Masukkan password: ")
+        if user in daftaruser and pwd in pwd_user:
+            if daftaruser.index(user) == pwd_user.index(pwd):
+                print(f"Selamat datang, {user}!")
+                input("Tekan Enter untuk melanjutkan...")
+                continue
+            else:
+                print("Username dan password tidak sesuai.")
+                input("Tekan Enter untuk mencoba lagi...")
+                continue
     elif pilihan == '2':
         nama_baru = input("Masukkan nama baru: ")
         if nama_baru in admin or nama_baru in daftaruser:
@@ -46,13 +58,7 @@ while True:
     elif pilihan != '1':
         print("Opsi tidak valid. Silakan coba lagi.")
         input("Tekan Enter untuk melanjutkan...")
-        continue
-    user = input("Masukkan username: ")
-    pwd = input("Masukkan password: ")
-    
-
-
-    
+        continue  
     if user in admin and pwd in password:
         if admin.index(user) == password.index(pwd):
             print(f"Selamat datang, {admin}!")
