@@ -67,7 +67,7 @@ while True:
     if user in admin and pwd in password:
         os.system('cls' if os.name == 'nt' else 'clear')
         if admin.index(user) == password.index(pwd):
-            print(f"Selamat datang, {admin}!")
+            print(f"Selamat datang ADMIN!")
             while True:
                 print("\nMenu:")
                 print("1. Lihat Event")
