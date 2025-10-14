@@ -22,10 +22,12 @@ while True:
     pilihan = input("Pilih opsi (1-4): ")
 
     if pilihan == '4':
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Terima kasih telah menggunakan sistem ini.")
 
         sys.exit()
     elif pilihan == '1':
+        os.system('cls' if os.name == 'nt' else 'clear')
         user = input("Masukkan username: ")
         pwd = input("Masukkan password: ")
         if user in daftaruser and pwd in pwd_user:
@@ -38,6 +40,7 @@ while True:
                 input("Tekan Enter untuk mencoba lagi...")
                 continue
     elif pilihan == '2':
+        os.system('cls' if os.name == 'nt' else 'clear')
         nama_baru = input("Masukkan nama baru: ")
         if nama_baru in admin or nama_baru in daftaruser:
             print("Nama sudah terdaftar. Silakan coba lagi.")
@@ -50,16 +53,19 @@ while True:
         input("Tekan Enter untuk melanjutkan...")
         continue
     elif pilihan == '3':
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("\nDaftar Event:")
         for event in events:
             print(f"ID: {event[0]}, Nama: {event[1]}, Hadiah: {event[2]}, Status: {event[3]}, Peserta: {', '.join(event[4])}")
         input("\nTekan Enter untuk kembali ke menu...")
         continue
     elif pilihan != '1':
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Opsi tidak valid. Silakan coba lagi.")
         input("Tekan Enter untuk melanjutkan...")
         continue  
     if user in admin and pwd in password:
+        os.system('cls' if os.name == 'nt' else 'clear')
         if admin.index(user) == password.index(pwd):
             print(f"Selamat datang, {admin}!")
             while True:
@@ -72,11 +78,14 @@ while True:
                 print("6. Logout")
                 choice = input("Pilih menu (1-6): ")
                 if choice == '1':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print("\nDaftar Event:")
                     for event in events:
                         print(f"ID: {event[0]}, Nama: {event[1]}, Hadiah: {event[2]}, Status: {event[3]}, Peserta: {', '.join(event[4])}")
                     input("\nTekan Enter untuk kembali ke menu...")
+                    
                 elif choice == '2':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     nama_event = input("Masukkan nama event: ")
                     hadiah_event = input("Masukkan hadiah event: ")
                     status_event = input("Masukkan status event (ongoing/finished): ")
@@ -84,8 +93,10 @@ while True:
                     print("Event berhasil ditambahkan!")
                     input("\nTekan Enter untuk kembali ke menu...")
                 elif choice == '3':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     event_id = int(input("Masukkan ID event yang ingin diupdate: "))
                     for event in events:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         if event[0] == event_id:
                             nama_event = input("Masukkan nama event baru: ")
                             hadiah_event = input("Masukkan hadiah event baru: ")
@@ -96,19 +107,24 @@ while True:
                             print("Event berhasil diupdate!")
                             break
                     else:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         print("Event dengan ID tersebut tidak ditemukan.")
                     input("\nTekan Enter untuk kembali ke menu...")
                 elif choice == '4':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     event_id = int(input("Masukkan ID event yang ingin dihapus: "))
                     for event in events:
+                        
                         if event[0] == event_id:
                             events.remove(event)
                             print("Event berhasil dihapus!")
                             break
                     else:
+                        
                         print("Event dengan ID tersebut tidak ditemukan.")
                     input("\nTekan Enter untuk kembali ke menu...")
                 elif choice == '5':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     event_id = int(input("Masukkan ID event untuk kelola peserta: "))
                     for event in events:
                         if event[0] == event_id:
@@ -131,18 +147,23 @@ while True:
                                 print("Opsi tidak valid.")
                             break
                     else:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         print("Event dengan ID tersebut tidak ditemukan.")
                     input("\nTekan Enter untuk kembali ke menu...")
                 elif choice == '6':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print("Logout berhasil.")
                     break
                 else:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print("Opsi tidak valid. Silakan coba lagi.")
                     input("\nTekan Enter untuk kembali ke menu...")
         else:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Username dan password tidak sesuai.")
             input("Tekan Enter untuk mencoba lagi...")
     else:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Username atau password salah.")
         input("Tekan Enter untuk mencoba lagi...")
 
