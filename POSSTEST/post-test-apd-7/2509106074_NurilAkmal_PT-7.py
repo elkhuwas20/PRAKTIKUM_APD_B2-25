@@ -361,7 +361,7 @@ def menu_admin(nama_admin):
             
             input("\nTekan Enter...")
         # Menu 6: Logout
-        elif pilih == '7':
+        elif pilih == '6':
             print("Logout berhasil")
             input("\nTekan Enter...")
             break
