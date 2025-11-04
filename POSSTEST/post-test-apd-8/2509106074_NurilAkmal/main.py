@@ -2,7 +2,7 @@ from modul_util import clear_screen, input_int
 from modul_user import login, register
 from modul_event import tampilkan_event, create_event, update_event, delete_event, daftar_peserta
 
-while True:
+while True: 
     clear_screen()
     print("="*60)
     print("SISTEM MANAJEMEN EVENT WEB3 & HACKATHON".center(60))
