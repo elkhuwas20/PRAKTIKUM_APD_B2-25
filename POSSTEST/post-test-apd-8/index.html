@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Event Manager - ETH Hackathon & DeFi Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <span>Web3Events</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active" data-page="home">Home</a>
+                    <a href="#auth" class="nav-link" data-page="auth">Login</a>
+                    <a href="#events" class="nav-link" data-page="events">Events</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="heroSection">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Web3 Event Management</span>
+                </h1>
+                <p class="hero-subtitle">Kelola event hackathon dan DeFi dengan mudah. Bergabunglah dengan komunitas Web3!</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="navigateTo('auth')">Login Sekarang</button>
+                    <button class="btn btn-secondary" onclick="navigateTo('events')">Lihat Event</button>
+                </div>
+            </div>
+            <div class="hero-background">
+                <div class="crypto-icon">
+                    <i class="fab fa-ethereum"></i>
+                </div>
+                <div class="crypto-icon">
+                    <i class="fab fa-ethereum"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auth Section -->
+        <section class="page" id="authPage" style="display: none;">
+            <div class="auth-container">
+                <div class="auth-box">
+                    <div class="auth-tabs">
+                        <button class="tab-btn active" id="loginTab" onclick="switchAuthTab('login')">Login</button>
+                        <button class="tab-btn" id="registerTab" onclick="switchAuthTab('register')">Register</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form active" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="loginUsername">Username</label>
+                            <input type="text" id="loginUsername" required placeholder="Masukkan username">
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required placeholder="Masukkan password">
+                            <span class="input-icon"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Login</button>
+                        <p class="form-hint">Demo: Username: "Bang Pernanda" / Password: "123" (User) atau "Nuril Akmal" / "123" (Admin)</p>
+                    </form>
+
+                    <!-- Register Form -->
+                    <form id="registerForm" class="auth-form" onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label for="registerUsername">Username</label>
+                            <input type="text" id="registerUsername" required placeholder="Pilih username unik">
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" required placeholder="Minimal 6 karakter">
+                            <span class="input-icon"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerConfirmPassword">Confirm Password</label>
+                            <input type="password" id="registerConfirmPassword" required placeholder="Konfirmasi password">
+                            <span class="input-icon"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="page" id="eventsPage" style="display: none;">
+            <div class="events-container">
+                <h2 class="section-title">Web3 & Hackathon Events</h2>
+                <div class="events-grid" id="eventsGrid">
+                    <!-- Events akan dirender di sini -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section (untuk yang sudah login) -->
+        <section class="page" id="dashboardPage" style="display: none;">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="userName"></h3>
+                        <p id="userRole" class="user-role"></p>
+                    </div>
+                    <nav class="dashboard-menu">
+                        <a href="#" class="menu-item active" onclick="switchDashboardTab('dashboard')">
+                            <i class="fas fa-th-large"></i> Dashboard
+                        </a>
+                        <a href="#" class="menu-item" onclick="switchDashboardTab('events')">
+                            <i class="fas fa-calendar-alt"></i> Events
+                        </a>
+                        <a href="#" class="menu-item" id="createEventMenu" style="display: none;" onclick="switchDashboardTab('create')">
+                            <i class="fas fa-plus-circle"></i> Create Event
+                        </a>
+                        <a href="#" class="menu-item" id="myEventsMenu" onclick="switchDashboardTab('myevents')">
+                            <i class="fas fa-bookmark"></i> My Events
+                        </a>
+                        <a href="#" class="menu-item" onclick="handleLogout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="dashboard-content">
+                    <!-- Dashboard Tab -->
+                    <div class="tab-content active" id="dashboardTab">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <i class="fas fa-calendar-check"></i>
+                                <div class="stat-info">
+                                    <p class="stat-label">Total Events</p>
+                                    <p class="stat-value" id="statTotalEvents">2</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-users"></i>
+                                <div class="stat-info">
+                                    <p class="stat-label">Registered Events</p>
+                                    <p class="stat-value" id="statRegistered">0</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-trophy"></i>
+                                <div class="stat-info">
+                                    <p class="stat-label">Prize Pool</p>
+                                    <p class="stat-value">15K USDT</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fab fa-ethereum"></i>
+                                <div class="stat-info">
+                                    <p class="stat-label">Blockchain</p>
+                                    <p class="stat-value">Ethereum</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="section-title" style="margin-top: 40px;">Recent Events</h3>
+                        <div class="events-table" id="dashboardEventsTable">
+                            <!-- Events akan dirender di sini -->
+                        </div>
+                    </div>
+
+                    <!-- Events Tab -->
+                    <div class="tab-content" id="eventsTab">
+                        <h2 class="section-title">Semua Events</h2>
+                        <div class="events-grid" id="dashboardEventsGrid">
+                            <!-- Events akan dirender di sini -->
+                        </div>
+                    </div>
+
+                    <!-- Create Event Tab (Admin only) -->
+                    <div class="tab-content" id="createTab" style="display: none;">
+                        <h2 class="section-title">Create New Event</h2>
+                        <form class="create-event-form" onsubmit="handleCreateEvent(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventName">Event Name</label>
+                                    <input type="text" id="eventName" required placeholder="Contoh: ETH Hackathon 2024">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventPrize">Prize Pool</label>
+                                    <input type="text" id="eventPrize" required placeholder="Contoh: 10.000 USDT + NFT">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventStatus">Status</label>
+                                    <select id="eventStatus" required>
+                                        <option value="">-- Pilih Status --</option>
+                                        <option value="ongoing">Ongoing</option>
+                                        <option value="finished">Finished</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventDescription">Description</label>
+                                    <input type="text" id="eventDescription" placeholder="Deskripsi event">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Create Event</button>
+                        </form>
+                    </div>
+
+                    <!-- My Events Tab -->
+                    <div class="tab-content" id="myEventsTab">
+                        <h2 class="section-title">Events Saya</h2>
+                        <div class="events-grid" id="myEventsGrid">
+                            <!-- My events akan dirender di sini -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- Modal untuk edit/delete event -->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEventModal()">&times;</span>
+                <h2 id="modalTitle">Event Details</h2>
+                
+                <div class="modal-body">
+                    <form id="editEventForm" onsubmit="handleUpdateEvent(event)">
+                        <div class="form-group">
+                            <label for="modalEventName">Event Name</label>
+                            <input type="text" id="modalEventName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalEventPrize">Prize Pool</label>
+                            <input type="text" id="modalEventPrize" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalEventStatus">Status</label>
+                            <select id="modalEventStatus" required>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="finished">Finished</option>
+                            </select>
+                        </div>
+                        <div class="modal-actions">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="button" class="btn btn-danger" id="deleteBtn" onclick="handleDeleteEvent()">Delete</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeEventModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Toast -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="advanced-features.js"></script>
+</body>
+</html>
